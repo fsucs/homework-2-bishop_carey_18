@@ -1,7 +1,7 @@
 /** 
-    @mainpage Concat Primes
+   Project 2: Concatenated Primes
 
-    @author Author
+   Author:Alice Bishop and Kathryn Carey
 
     What does this program do in short? Perhaps the name of the project goes here?
 */

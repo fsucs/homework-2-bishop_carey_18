@@ -27,10 +27,20 @@
 */
 std::string get_concatenated_primes()
 {
-    std::string concat_primes = "";
-    //Complete this function
-
-    return concat_primes.substr(0, 1000);
+    using namespace std;
+    string concat_primes = "";
+	for (int x = 2; x < 2000; x++){//k starting at 2
+		bool isPrime = true; //prime number is true unless if statements are true
+		for (int i = 2; i <= x / 2; i++){
+			if (x % i == 0){ //checks if the number is divisible
+				isPrime = false;
+				break;
+			}
+		}
+		if (isPrime == true){//if the number is prime, it adds it to the string
+			concat_primes = concat_primes + to_strig(x);
+	}
+    return concat_primes.substr(0, 1000);//shortens the string to the length of 1000
 }
 
 

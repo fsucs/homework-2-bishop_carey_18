@@ -47,7 +47,8 @@ std::string get_concatenated_primes()
 std::string get_slice_of_5(const std::string & primes, const int index)
 {
     std::string ret = "";
-    //Complete this function
+    
+    ret = primes.substr(index, 5);
     return ret;
 }
 
@@ -62,7 +63,13 @@ int main(int argc, char *argv[]){
         assert(get_slice_of_5(concat_primes, 6) == "13171");
         cout<<"Unit Test 2 passed\n";
         
-        //Please add 3 more unit test here/
+       assert(get_slice_of_5(concat_primes, 7) == "31719");
+       cout<<"Unit Test 3 passed\n";
+       assert(get_slice_of_5(concat_primes, 120) == "92332");
+       cout<<"Unit Test 4 passed\n";
+       assert(get_slice_of_5(concat_primes, 6) == "1");
+       cout<<"Unit Test 5 passed\n";
+	    
     } else{
         cout<< "Please input n: ";
         while(std::cin >> n)

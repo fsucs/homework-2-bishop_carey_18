@@ -18,8 +18,8 @@
 
 #include<iostream>
 #include<string>
-
-
+#include<assert.h>
+#include<boost/lexical_cast.hpp>
 /** \brief Brief function explaination
    
   
@@ -40,17 +40,23 @@ std::string get_concatenated_primes()
 			}
 		}
 		if (isPrime == true){//if the number is prime, it adds it to the string
-			concat_primes = concat_primes + to_strig(x);
+
+			concat_primes = concat_primes + boost::lexical_cast<string>(x);
+	}
 	}
     return concat_primes.substr(0, 1000);//shortens the string to the length of 1000
+ 	
 }
-
 
 std::string get_slice_of_5(const std::string & primes, const int index)
 {
     std::string ret = "";
     
-    ret = primes.substr(index, 5); //returns the prime numbers starting at given to 5 places
+    if ((1000 - index) < 5)
+	ret = primes.substr(index);
+    else 
+	ret = primes.substr(index, 5);
+
     return ret;
 }
 
@@ -69,7 +75,7 @@ int main(int argc, char *argv[]){
        cout<<"Unit Test 3 passed\n";
        assert(get_slice_of_5(concat_primes, 120) == "92332");
        cout<<"Unit Test 4 passed\n";
-       assert(get_slice_of_5(concat_primes, 6) == "1");
+       assert(get_slice_of_5(concat_primes, 999) == "1");
        cout<<"Unit Test 5 passed\n";
 	    
     } else{

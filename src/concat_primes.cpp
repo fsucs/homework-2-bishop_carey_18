@@ -3,7 +3,8 @@
 
    Author:Alice Bishop and Kathryn Carey
 
-    What does this program do in short? Perhaps the name of the project goes here?
+   This program asks the use to input a number. It then returns the the
+   prime numbers to five places from the inputted number.
 */
 
 /** \file concat_primes.cpp
@@ -21,6 +22,7 @@
 
 /** \brief Brief function explaination
    
+  
    And a long one...
 
     @return std::string
@@ -48,7 +50,7 @@ std::string get_slice_of_5(const std::string & primes, const int index)
 {
     std::string ret = "";
     
-    ret = primes.substr(index, 5);
+    ret = primes.substr(index, 5); //returns the prime numbers starting at given to 5 places
     return ret;
 }
 
